@@ -1,0 +1,10 @@
+fn sum_of(args...) {
+  // args is passed in as a list.
+  return args.reduce(|sum, n| sum + n);
+}
+
+// This:
+print(sum_of(1, 2, 3));
+
+// Is the exact same as this:
+print(sum_of([1, 2, 3]));

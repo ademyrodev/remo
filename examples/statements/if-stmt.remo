@@ -1,0 +1,12 @@
+let mut money = 1000;
+// I'm now rich!
+
+// Let's buy McDonalds.
+if (money > 10) {
+  print("Enjoy your meal!");
+  money -= 10;
+}
+
+print(money);
+
+

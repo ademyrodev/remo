@@ -1,0 +1,28 @@
+// Hardcode the vowels list:
+let vowels = ['a', 'e', 'i', 'o', 'u'];
+
+// Function that filters every vowel from word
+let get_vowels_from = |word| word.filter(|c| c in vowels); 
+
+fn reverse(mut word) {
+  // Some list that will contain every vowel we encountered
+  // in post-order
+  let mut reversed_vowels = get_vowels_from(word).reversed();
+  
+  // For-each loop counter
+  foreach (let c and idx in word) {
+    if (!c in vowels) {
+      continue;
+    }
+
+    // We're currently in a vowel
+    word[idx] = reversed_vowels.pop();
+    idx++;
+  }
+
+  return word;
+}
+
+let given_word = input("Prompt: ");
+
+print(reverse(given_word));

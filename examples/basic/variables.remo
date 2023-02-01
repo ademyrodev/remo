@@ -1,0 +1,7 @@
+let mut x = 10
+print(x);
+x = 304;
+print(x);
+let y = x + 8;
+print(y + x);
+
