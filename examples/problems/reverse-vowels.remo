@@ -17,7 +17,6 @@ fn reverse(mut word) {
 
     // We're currently in a vowel
     word[idx] = reversed_vowels.pop();
-    idx++;
   }
 
   return word;
