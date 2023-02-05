@@ -9,10 +9,11 @@ Or you can go to the "examples" folder for a few examples (there are only a few)
 
 Currently, the disassembler and bytecode chunks have been implemented.
 
-## How to compile
+## What's new
 
-Currently, Remo is not an interpreter - it only has one handcrafted chunk that's displayed when
-the program is run. There's no action whatsoever.
+Remo can now execute bytes! The VM is fully capable of interpreting the bytecode.
+
+## How to compile
 
 If you would like to compile it, run the following (assuming you're in the ``remo`` folder)
 
@@ -22,9 +23,9 @@ make
 ```
 
 This should output ``compiled. Have fun!``.
-Now you can run ``./remo`` and take a look at a chunk that contains the bytecode for a 
-program that says ``1 + 1``.
+Now you can run ``./remo`` and have a look at a strange output. I tried handcrafting a chunk that
+says "1 + 2 - 3 * 4 / 5", and the output was 2.183333. I'm not sure if it's correct since I didn't verify it.
 
-Remo runs on a stack-based VM (at least that's the goal, it hasn't been implemented yet).
+Remo runs on a stack-based VM.
 
 
