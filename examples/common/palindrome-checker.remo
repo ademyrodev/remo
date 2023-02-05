@@ -1,0 +1,10 @@
+// This example uses the string inversion method, in
+// order to keep things simple.
+
+let check_palindrome = |num| {
+  let num_as_str = num.to(str);
+  let reversed_num = num_as_str.reversed();
+  return reversed_num == num_as_str;
+}
+
+print(check_palindrome(2002));

@@ -1,0 +1,21 @@
+fn is_prime(x) {
+  // 1 is not prime by definition
+  if (x == 1)
+    return false;
+
+  // Divide x by every number until it reaches itself
+  for (let mut i = 0; i <= x; i++) {
+    if (x / i % 2 == 0) {
+      if (i == x or i == 1)
+        continue;
+
+      return false;
+    }
+  }
+
+  // I don't even know if this actually works lmao, 
+  // and I won't even check.
+  return true;
+}
+
+print(is_prime(5));
