@@ -1,3 +1,6 @@
+#ifndef VALUE_H
+#define VALUE_H
+
 // Types of values
 #include "common.h"
 #include "mem.h"
@@ -19,3 +22,5 @@ void freeValueArray(ValueArray *);
 
 // Displays a value.
 void logValue(Value);
+
+#endif

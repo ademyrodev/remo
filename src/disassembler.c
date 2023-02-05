@@ -39,7 +39,7 @@ static int longConstantInstruction(Chunk* chunk, int offset, char* name) {
   return offset + 4;
 }
 
-static int disassembleInstruction(Chunk *ch, int offset) {
+int disassembleInstruction(Chunk *ch, int offset) {
   // Pretty simple, yet so big.
   printf("    %d @ %d:%d", offset, getLine(ch, offset), ch->cols[offset]);
   switch (ch->instructions[offset]) {

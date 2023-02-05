@@ -1,7 +1,7 @@
 // Pretty much every inclusion we need is already there.
 #include "common.h"
 #include "disassembler.h"
-#include <stdio.h>
+#include "vm.h"
 
 int main(int argc, char **argv) {
   // Handcrafted chunk. You can play around with it
@@ -10,15 +10,24 @@ int main(int argc, char **argv) {
   Chunk myChunk;
   allocChunk(&myChunk);
   
-  writeConstant(&myChunk, 1, 1, 123);
-  writeConstant(&myChunk, 1, 2, 123);
-  emitToChunk(&myChunk, OP_ADD, 3, 123);
+  writeConstant(&myChunk, 3, 1, 123);
+  writeConstant(&myChunk, 4, 2, 123);
+  emitToChunk(&myChunk, OP_MUL, 3, 123);
+  writeConstant(&myChunk, 5, 8, 23);
+  emitToChunk(&myChunk, OP_DIV, 28, 3);
+  writeConstant(&myChunk, 1, 4, 2);
+  writeConstant(&myChunk, 2, 9, 3);
+  emitToChunk(&myChunk, OP_ADD, 9, 4);
+  emitToChunk(&myChunk, OP_SUB, 2, 9);
   emitToChunk(&myChunk, OP_RETURN, 4, 123);
 
-
-  printf("\n");
-
   disassembleChunk(&myChunk, "my_chunk");
+
+  // Now try to execute it
+  VM ourVM;
+  allocVM(&ourVM);
+  interpret(&ourVM, &myChunk);
+  freeVM(&ourVM);
 
   freeChunk(&myChunk);
   return 0;

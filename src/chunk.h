@@ -1,3 +1,6 @@
+#ifndef CHUNK_H
+#define CHUNK_H
+
 // Remo bytecode chunk definition.
 #include "common.h"
 #include "value.h"
@@ -51,3 +54,4 @@ void freeChunk(Chunk *);
 
 int getLine(Chunk *, int);
 
+#endif

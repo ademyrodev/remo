@@ -1,3 +1,5 @@
+#ifndef MEM_H
+#define MEM_H
 // Will take care of memory for us - allocations and all the good
 // stuff.
 #include "common.h"
@@ -21,4 +23,4 @@
 
 void *reallocate(void *, size_t);
 
-
+#endif
